@@ -39,8 +39,7 @@
               >
                 <b-form-input
                   id="input-1"
-                  v-model="form.email"
-                  type="email"
+                  v-model="form.title"
                   required
                   placeholder="Name der Challenge"
                 />
@@ -49,19 +48,23 @@
               <b-form-group id="input-group-2">
                 <b-form-input
                   id="input-2"
-                  v-model="form.name"
+                  v-model="form.text"
                   required
                   placeholder="Beschreibung der Challenge"
                 />
               </b-form-group>
               <b-button>Upload Foto</b-button>
               <b-button>Upload Video</b-button>
+              <br>
+              <b-button type="submit" variant="primary" class="mt-4">
+                Submit
+              </b-button>
             </b-form>
           </div>
         </b-col>
       </b-row>
     </b-container>
-    <b-container>
+    <b-container class="dashboard--challenges">
       <b-row>
         <b-col cols="9">
           <h3>Nimm jetzt an der Challenge teil</h3>
@@ -78,40 +81,42 @@
           </b-form>
         </b-col>
       </b-row>
-      <b-row>
-        <div class="dashboard--card">
-          <b-img src="/img/placeholder.jpg" fluid alt="Responsive image" />
-          <h4><strong>Challenge</strong> 1 Stunde yoga</h4>
-          <p>
-            Exercitation minim proident quis cupidatat ipsum commodo veniam Lorem enim cillum elit. Culpa laborum ullamco ea qui voluptate duis labore voluptate. Pariatur et nostrud adipisicing elit adipisicing sunt est. Magna commodo est nulla amet elit officia amet dolor. Nulla do est exercitation sint exercitation mollit culpa labore pariatur.
-          </p>
-          <b-button>Mehr erfahren</b-button>
-        </div>
-      </b-row>
+      <div v-for="challenge in challenges" :key="challenge.id">
+        <ChallengeCard
+          :id="challenge.id"
+          :title="challenge.title"
+          :text="challenge.text"
+        />
+      </div>
     </b-container>
   </div>
 </template>
 
 <script>
+import ChallengeCard from '../../components/ChallengeCard'
 export default {
+  components: {
+    ChallengeCard
+  },
   data () {
     return {
+      challenges: [],
       form: {
-        email: '',
-        name: ''
+        title: '',
+        text: ''
       }
     }
   },
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
-      alert(JSON.stringify(this.form))
+      this.challenges.push(this.form)
     },
     onReset (evt) {
       evt.preventDefault()
       // Reset our form values
-      this.form.email = ''
-      this.form.name = ''
+      this.form.title = ''
+      this.form.text = ''
     }
   }
 }
@@ -149,6 +154,9 @@ export default {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     padding: 3rem 6rem;
     margin-top: 2rem;
+  }
+  &--challenges{
+    min-height: 20vh;
   }
 }
 </style>
