@@ -28,7 +28,7 @@
 
     footer{
         height: 5vh;
-        background-color: $primary;
+        background-color: $secondary;
         color: white;
     }
 </style>
