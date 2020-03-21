@@ -20,3 +20,15 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Pages
+
+- Login/ SingUp (index)
+- Alle Challenges (Dashboard)
+- Challenge erstellen
+- Challenge Details
+
+### Nice-to-have
+
+- Profilseite (Challenges, die gemacht wurden und die man gemacht hat)
+- Profilseite bearbeiten
