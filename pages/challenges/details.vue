@@ -33,11 +33,11 @@ export default {
       if (typeof this.challenge.img === 'string') {
         return this.challenge.img
       }
-      return '/img/placeholder.jpg'
+      return '/img/default-challenge-banner.png'
     },
     challengeStyle () {
       return {
-        'background-image': "url('/img/placeholder.jpg')"
+        'background-image': 'url(' + this.bannerImgUrl + ')'
       }
     }
   },
