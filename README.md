@@ -64,27 +64,28 @@ pages/profile/settings.vue
 
 
 ## Components
+Die Vue Components liegen im Ordner components.
 
 ### allgemeine Seitenelemente
-- Navbar ()
-- Logo ()
-- Footer ()
+- Header (Nav.vue)
+- Logo (Logo.vue)
+- Footer (Footer.vue)
 
 ### Authentifizierung
-- Formular zum Login (components/authentification/LoginForm.vue)
-- Formular zum Registrieren (components/authentification/SignUpForm.vue)
+- Formular zum Login (authentification/LoginForm.vue)
+- Formular zum Registrieren (authentification/SignUpForm.vue)
 
 ### Challenge-Elemente
-- Preview einer Challenge (components/ChallengeCard.vue)
-- Ausführliche Beschreibung einer einzelnen Challenge (components/challenges/ChallengeDetails.vue)
-- Liste einer von Teilnehmern (components/challenges/ParticipantsList.vue)
+- Preview einer Challenge (ChallengeCard.vue)
+- Ausführliche Beschreibung einer einzelnen Challenge (challenges/ChallengeDetails.vue)
+- Liste einer von Teilnehmern (challenges/ParticipantsList.vue)
 
 #### Kommentarfunktion
-- Kommentar hinzufügen (components/comments/AddCommentItem.vue)
-- Darstellung eines einzelnen Kommentars (components/comments/CommentItem.vue)
+- Kommentar hinzufügen (comments/AddCommentItem.vue)
+- Darstellung eines einzelnen Kommentars (comments/CommentItem.vue)
 
 ### Nutzer
-- Darstellung eines Nutzerbilds (components/Avatar.vue)
+- Darstellung eines Nutzerbilds (Avatar.vue)
 
 ## Anbindung ans Backend
 Die Anbindung an das [Backend](https://github.com/ps100000/WirVsVirus) wurde bisher noch nicht implementiert.
