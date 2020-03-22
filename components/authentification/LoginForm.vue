@@ -21,19 +21,20 @@
         ></b-form-input>
       </b-form-group>
 
-      <div class="d-flex justify-content-between">
+      <div class="text-left">
         <b-link href="#forgot-password">Passwort vergessen?</b-link>
-        <span>
-          Noch nicht registriert?
-          <b-link href="/register">Klicke hier.</b-link>
-        </span>
       </div>
 
       <div class="bg-danger" v-if="errors">
-        {{errors}}
+        {{ errors }}
       </div>
 
       <b-button type="submit" variant="primary">Login</b-button>
+
+      <div class="text-left">
+        Noch nicht registriert?
+        <b-link href="/register">Klicke hier.</b-link>
+      </div>
     </b-form>
   </div>
 </template>

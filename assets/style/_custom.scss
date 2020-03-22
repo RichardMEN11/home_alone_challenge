@@ -1,0 +1,89 @@
+@import './variables';
+
+.text-primary {
+  color: $primary!important;
+}
+
+.authentification {
+  h1,
+  h2,
+  .card-title {
+    color: $primary;
+  }
+
+  a {
+    color: $text-color;
+  }
+}
+
+.authentification {
+  display: flex;
+  height: 100%;
+  padding: 5vh 0;
+
+  .banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(0deg, rgba(34, 45, 65, 0.85), rgba(34, 45, 65, 0.85)), url('/img/hero.png');
+    background-size: cover;
+  }
+
+  .row {
+    > div + div {
+      margin-top: 2em;
+    }
+  }
+
+  .container-fluid {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &--hero {
+    display: flex;
+    align-items: center;
+    font-family: Helvetica;
+    font-size: 1em;
+    color: $white!important;
+
+    h1 {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 2em;
+      line-height: 1em;
+      color: $white!important;
+    }
+
+  }
+
+  form > button[type="submit"] {
+    margin: 1em 0;
+  }
+
+  @media (min-width: 768px) {
+    .banner {
+      width: 50%;
+    }
+
+    .row {
+      > div + div {
+        margin-top: unset;
+      }
+    }
+
+    &--hero {
+      font-size: 1.9vw;
+      h1 {
+        font-size: 3em;
+      }
+      > div {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+      }
+    }
+  }
+}

@@ -1,13 +1,18 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="d-none d-lg-block col-lg-6">
-        <h1>Never home alone again</h1>
-        <p>Lorem ipsum...</p>
+      <div class="col-12 col-md-6 authentification--hero">
+        <div>
+          <h1>Never home<br/>alone <span class="text-primary">again</span></h1>
+        </div>
       </div>
-      <div class="col-12 col-lg-6">
-        <h1>Login</h1>
-        <login-form />
+      <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+        <div class="card">
+          <div class="card-body">
+            <h2>Login</h2>
+            <login-form />
+          </div>
+        </div>
       </div>
     </div>
   </div>

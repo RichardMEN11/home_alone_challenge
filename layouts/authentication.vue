@@ -1,10 +1,12 @@
 <template>
-  <div class="d-flex align-items-center">
+  <div class="authentification">
+    <div class="banner" />
     <nuxt />
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import '../assets/style/custom';
 
 body {
   height: 100vh;
