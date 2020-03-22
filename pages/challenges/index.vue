@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero
-      :heading="['Cooler', 'Text']"
+      :heading="['Nie mehr Langeweile', 'allein zu Haus!']"
     />
     <TextImageSection
       :heading="['Verwende deine Zeit', 'sinnvoll']"
@@ -113,7 +113,6 @@
         </div>
       </div>
     </b-container>
-    </hero>
   </div>
 </template>
 

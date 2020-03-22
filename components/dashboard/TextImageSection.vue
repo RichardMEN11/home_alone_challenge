@@ -33,7 +33,6 @@ export default {
     },
     imgPos: {
       type: String,
-      required: true,
       default: 'left'
     }
   }

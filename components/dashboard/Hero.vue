@@ -65,7 +65,7 @@ export default {
 .index{
     &--hero{
       font-family: Helvetica;
-      background-image: linear-gradient(0deg, rgba(34, 45, 65, 0.85), rgba(34, 45, 65, 0.85)), url('/img/placeholder.jpg');
+      background-image: linear-gradient(0deg, rgba(34, 45, 65, 0.85), rgba(34, 45, 65, 0.85)), url('/img/hero.png');
       background-position:  center;
       background-size: cover;
       height: 60vh;
@@ -99,3 +99,5 @@ export default {
         }
       }
     }
+}
+</style>
