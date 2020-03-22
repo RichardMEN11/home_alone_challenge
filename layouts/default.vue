@@ -42,7 +42,14 @@ html {
   color: white;
   background-color: $primary;
   border: none;
-  padding: .5rem 2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 7px;
+}
+
+.btn-primary:hover {
+  text-decoration: none;
+  background-color: $secondary;
+  color: white;
 }
 
 .button--green:hover {

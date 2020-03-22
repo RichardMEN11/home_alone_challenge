@@ -11,13 +11,13 @@
             Dann melde dich an und mach bei XXX mit...
           </p>
 
-          <b-button class="btn-primary mt-1">
+          <nuxt-link class="btn-primary mt-1" to="/sign-up">
             Anmelden
-          </b-button>
+          </nuxt-link>
           <br class="d-md-none">
-          <b-button class="btn-primary ml-md-4 mt-1">
+          <nuxt-link class="btn-primary ml-md-4 mt-1" to="/login">
             Challenge finden
-          </b-button>
+          </nuxt-link>
         </b-col>
         <b-col sm="0" md="2" />
       </b-row>
@@ -113,14 +113,14 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-container class="text-center h-100">
+    <b-container class="text-center h-100 index--last" fluid>
       <div class="b-row index--button-end mt-5 pt-5">
-        <b-button class="btn-primary">
+        <nuxt-link to="/sign-up" class="btn-primary">
           Anmelden
-        </b-button>
-        <b-button class="btn-primary">
+        </nuxt-link>
+        <nuxt-link class="btn-primary ml-4" to="/login">
           Challenge finden
-        </b-button>
+        </nuxt-link>
       </div>
     </b-container>
   </div>
@@ -171,8 +171,18 @@ export default {
       margin: 20px 0;
     }
     &--button-end{
-      height: 20vh;
+      height: 40vh;
     }
+    &--last{
+      background-image: url('/img/background.png');
+      background-size: contain;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
 
   @media only screen and (max-width: 420px){
