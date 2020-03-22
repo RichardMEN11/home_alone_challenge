@@ -1,8 +1,8 @@
 <template>
-  <footer>
-    <b-container fluid>
+  <footer class="d-flex">
+    <b-container fluid class="elements text-center">
       <b-row>
-        <b-col>
+        <b-col offset="3">
           Challenge erstellen
         </b-col>
         <b-col>
@@ -30,5 +30,9 @@
         height: 5vh;
         background-color: $secondary;
         color: white;
+        > .elements{
+          margin-top: auto;
+          margin-bottom: auto;
+        }
     }
 </style>
