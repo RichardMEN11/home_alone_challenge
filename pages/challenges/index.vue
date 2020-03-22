@@ -1,17 +1,11 @@
 <template>
   <div>
-    <b-container class="dashboard--hero" fluid>
-      <b-row class="h-100  align-items-center">
-        <b-col cols="4" />
-        <b-col class="justify-content-center" cols="6">
-          <h1 class="dashboard--heading text-center">
-            Home Alone - Challenge yourself
-          </h1>
-        </b-col>
-        <b-col cols="2" />
-      </b-row>
-    </b-container>
-    <b-container class="my-5 py-5">
+    <Hero
+      :heading="['Cooler', 'Text']"
+    />
+    <b-container
+      class="my-5 py-5"
+    >
       <b-row>
         <b-col>
           <h3 class="dashboard--second">
@@ -89,14 +83,17 @@
         />
       </div>
     </b-container>
+    </hero>
   </div>
 </template>
 
 <script>
 import ChallengeCard from '../../components/ChallengeCard'
+import Hero from '../../components/dashboard/Hero'
 export default {
   components: {
-    ChallengeCard
+    ChallengeCard,
+    Hero
   },
   data () {
     return {
