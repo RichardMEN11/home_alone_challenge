@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header d-flex justify-content-between">
       <h1>{{ challenge.title }}</h1>
-      <b-button type="button" @click="toggleLike">
+      <b-button type="button" :variant="liked ? 'primary' : 'secondary'" class="like" @click="toggleLike">
         <font-awesome-icon :icon="likeIcon" />
       </b-button>
     </div>
@@ -79,9 +79,38 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+@import '../../assets/style/variables';
+
+.page.challenge-details {
+  padding-top: 25vh;
+  background-position: bottom;
+  background-size: cover;
+  height: 50vh;
+  background-attachment: fixed;
+  h1, h2 {
+    color: $primary;
+  }
+  .card-header,
+  .card-footer {
+    background-color: inherit;
+    border: none;
+  }
+  .card-text {
+    padding: 0.75rem 1.25rem;
+  }
   .call-to-action {
     margin-top: 1em;
     text-align: center;
   }
+  button.like {
+    height: 2em;
+    width: 2em;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 0;
+  }
+}
+
 </style>

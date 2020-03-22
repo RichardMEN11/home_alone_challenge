@@ -1,15 +1,16 @@
 <template>
-  <div>
-    <!-- banner -->
-    <b-row>
-      <b-col cols="12" md="8" offset-md="2">
-        <challenge-details
-          :challenge="challenge"
-          :participants="participants"
-          :liked="liked"
-        />
-      </b-col>
-    </b-row>
+  <div class="page challenge-details">
+    <div class="banner" :style="challengeStyle" />
+    <div class="container">
+      <b-row>
+        <b-col cols="12" md="8" offset-md="2">
+          <challenge-details
+            :challenge="challenge"
+            :liked="liked"
+          />
+        </b-col>
+      </b-row>
+    </div>
   </div>
 </template>
 
@@ -27,6 +28,19 @@ export default {
       liked: false
     }
   },
+  computed: {
+    bannerImgUrl () {
+      if (typeof this.challenge.img === 'string') {
+        return this.challenge.img
+      }
+      return '/img/placeholder.jpg'
+    },
+    challengeStyle () {
+      return {
+        'background-image': "url('/img/placeholder.jpg')"
+      }
+    }
+  },
   created () {
     // @TODO get and set challenge, and user preference (-> liked)
     this.challenge = {
@@ -37,3 +51,27 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+
+@import '../../assets/style/variables';
+
+.page.challenge-details {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 25vh;
+
+  .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+</style>
