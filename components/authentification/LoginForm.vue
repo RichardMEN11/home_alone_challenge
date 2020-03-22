@@ -55,7 +55,7 @@ export default {
     resetErrors () {
       this.errors = null
     },
-    async signUp () {
+    async login () {
       try {
         await this.$store.dispatch('login', this.form)
       } catch (e) {
