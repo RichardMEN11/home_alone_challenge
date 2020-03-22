@@ -42,7 +42,21 @@ html {
   color: white;
   background-color: $primary;
   border: none;
-  padding: .5rem 2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 7px;
+}
+
+.btn-primary:hover {
+  text-decoration: none;
+  background-color: $secondary;
+  color: white;
+}
+
+.btn-secondary{
+  background-color: $lg-background;
+  border: none;
+  border-radius: 18px;
+  color: #000;
 }
 
 .button--green:hover {
@@ -68,4 +82,8 @@ html {
 .highlighted{
     color: $primary;
   }
+
+.input[type="text"]:focus{
+  outline: none !important;
+}
 </style>

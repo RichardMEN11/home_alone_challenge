@@ -1,14 +1,19 @@
 <template>
   <b-row>
-    <b-col cols="8">
+    <b-col md="4" sm="12" class="mt-3">
+      <h3><span class="highlighted">{{ categorie }}</span><br> Challenges</h3>
+    </b-col>
+    <b-col md="8" sm="12">
       <div class="dashboard--card-challenge">
-        <b-img src="/img/placeholder.jpg" fluid alt="Responsive image" class="card--img" />
+        <b-img :src="fotoLink" fluid alt="Responsive image" class="card--img" />
         <div class="card--text">
           <h4><strong>Challenge: </strong>{{ title }}</h4>
           <p>
             {{ text }}
           </p>
-          <b-button>Mehr erfahren</b-button>
+          <nuxt-link class="btn-primary" to="/challenges">
+            Mehr erfahren
+          </nuxt-link>
         </div>
       </div>
     </b-col>
@@ -18,8 +23,23 @@
 <script>
 export default {
   props: {
-    title: String,
-    text: String
+    title: {
+      type: String,
+      default: ''
+    },
+    text: {
+      type: String,
+      default: ''
+    },
+    categorie: {
+      type: String,
+      required: true
+    },
+    fotoLink: {
+      type: String,
+      default: '/img/placeholder.png'
+    }
+
   }
 }
 </script>
@@ -33,8 +53,7 @@ export default {
         border-radius: 7px;
 
         > .card--img{
-            border-radius: 7px 7px 0px 0px;
-            height: 30%;
+            border-radius: 7px 7px 0px 0px;;
             width: 100%;
         }
         > .card--text{

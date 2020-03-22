@@ -1,58 +1,25 @@
 <template>
   <div>
-    <b-container class="index--hero" fluid>
-      <b-row class="h-100  align-items-center">
-        <b-col sm="0" md="2" />
-        <b-col md="8" sm="12" class="justify-content-center">
-          <h1 class="index--hero-heading">
-            Du suchst grade nach neuen <span class="highlighted">Aufgaben?</span>
-          </h1>
-          <p class="index--hero-subheading">
-            Dann melde dich an und mach bei XXX mit...
-          </p>
-
-          <b-button class="btn-primary mt-1">
-            Anmelden
-          </b-button>
-          <br class="d-md-none">
-          <b-button class="btn-primary ml-md-4 mt-1">
-            Challenge finden
-          </b-button>
-        </b-col>
-        <b-col sm="0" md="2" />
-      </b-row>
-    </b-container>
-    <b-container class="my-5">
-      <b-row>
-        <b-col md="4" order-sm="1" order-md="1">
-          <b-img src="/img/blob1.png" fluid alt="Responsive image" />
-        </b-col>
-        <b-col md="7" offset-md="1" order-md="2">
-          <h2 class="mt-5 py-auto">
-            Erstelle eine <span class="highlighted">Challenge</span>
-          </h2>
-          <p class="index--paragraph pt-4">
-            Ipsum elit magna est sunt amet. Qui aute culpa irure cillum adipisicing minim ad dolore cillum id commodo occaecat adipisicing. Sit tempor ad nostrud est fugiat aliquip do enim sit culpa voluptate officia. Pariatur ullamco cillum laborum adipisicing nulla laboris amet do. Aliqua quis sunt duis ut eu magna ex aliqua nostrud aliquip sint duis elit. Sunt anim culpa ad irure minim non fugiat cillum mollit pariatur ipsum irure.
-          </p>
-        </b-col>
-      </b-row>
-    </b-container>
-    <b-container class="my-5">
-      <b-row>
-        <b-col md="7" order-sm="1" order-md="2">
-          <h2 class="mt-5 py-auto">
-            Verwende deine Zeit  <span class="highlighted">sinnvoll</span>
-          </h2>
-          <p class="index--paragraph pt-4">
-            Ipsum elit magna est sunt amet. Qui aute culpa irure cillum adipisicing minim ad dolore cillum id commodo occaecat adipisicing. Sit tempor ad nostrud est fugiat aliquip do enim sit culpa voluptate officia. Pariatur ullamco cillum laborum adipisicing nulla laboris amet do. Aliqua quis sunt duis ut eu magna ex aliqua nostrud aliquip sint duis elit. Sunt anim culpa ad irure minim non fugiat cillum mollit pariatur ipsum irure.
-          </p>
-        </b-col>
-        <b-col md="4" offset-md="1" order-sm="1" order-md="2">
-          <b-img src="/img/blob2.png" fluid alt="Responsive image" />
-        </b-col>
-      </b-row>
-    </b-container>
-    <b-container class="my-5">
+    <Hero
+      :heading="['Du suchst grade nach neuen ', 'Aufgaben']"
+      subheading="Dann melde dich an und mach bei XXX mit..."
+      first-button-link="/sign-up"
+      first-button-text="Anmelden"
+      second-button-link="/login"
+      second-button-text="Challenge finden"
+    />
+    <TextImageSection
+      :heading="['Verwende deine Zeit', 'sinnvoll']"
+      text="  Ipsum elit magna est sunt amet. Qui aute culpa irure cillum adipisicing minim ad dolore cillum id commodo occaecat adipisicing. Sit tempor ad nostrud est fugiat aliquip do enim sit culpa voluptate officia. Pariatur ullamco cillum laborum adipisicing nulla laboris amet do. Aliqua quis sunt duis ut eu magna ex aliqua nostrud aliquip sint duis elit. Sunt anim culpa ad irure minim non fugiat cillum mollit pariatur ipsum irure."
+      img-link="/img/blob1.png"
+    />
+    <TextImageSection
+      :heading="['Erstelle eine', 'Challenge']"
+      text="  Ipsum elit magna est sunt amet. Qui aute culpa irure cillum adipisicing minim ad dolore cillum id commodo occaecat adipisicing. Sit tempor ad nostrud est fugiat aliquip do enim sit culpa voluptate officia. Pariatur ullamco cillum laborum adipisicing nulla laboris amet do. Aliqua quis sunt duis ut eu magna ex aliqua nostrud aliquip sint duis elit. Sunt anim culpa ad irure minim non fugiat cillum mollit pariatur ipsum irure."
+      img-link="/img/blob2.png"
+      img-pos="right"
+    />
+    <b-container class="my-5 py-5">
       <b-row>
         <b-col md="4">
           <b-img src="/img/blob3.png" fluid alt="Responsive image" class="mt-5" />
@@ -98,39 +65,33 @@
         <b-col />
       </b-row>
     </b-container>
-    <b-container class="my-5">
-      <b-row>
-        <b-col md="7" order-sm="1" order-md="2">
-          <h2 class="mt-5 py-auto">
-            Meld dich an <span class="highlighted">mach mit!</span>
-          </h2>
-          <p class="index--paragraph pt-4">
-            Ipsum elit magna est sunt amet. Qui aute culpa irure cillum adipisicing minim ad dolore cillum id commodo occaecat adipisicing. Sit tempor ad nostrud est fugiat aliquip do enim sit culpa voluptate officia. Pariatur ullamco cillum laborum adipisicing nulla laboris amet do. Aliqua quis sunt duis ut eu magna ex aliqua nostrud aliquip sint duis elit. Sunt anim culpa ad irure minim non fugiat cillum mollit pariatur ipsum irure.
-          </p>
-        </b-col>
-        <b-col md="4" offset-md="1" order-sm="1" order-md="2">
-          <b-img src="/img/blob2.png" fluid alt="Responsive image" />
-        </b-col>
-      </b-row>
-    </b-container>
-    <b-container class="text-center h-100">
+    <TextImageSection
+      :heading="['Melde dich an', 'mach mit!']"
+      text="  Ipsum elit magna est sunt amet. Qui aute culpa irure cillum adipisicing minim ad dolore cillum id commodo occaecat adipisicing. Sit tempor ad nostrud est fugiat aliquip do enim sit culpa voluptate officia. Pariatur ullamco cillum laborum adipisicing nulla laboris amet do. Aliqua quis sunt duis ut eu magna ex aliqua nostrud aliquip sint duis elit. Sunt anim culpa ad irure minim non fugiat cillum mollit pariatur ipsum irure."
+      img-link="/img/blob4.png"
+      img-pos="right"
+    />
+    <b-container class="text-center h-100 index--last" fluid>
       <div class="b-row index--button-end mt-5 pt-5">
-        <b-button class="btn-primary">
+        <nuxt-link to="/sign-up" class="btn-primary">
           Anmelden
-        </b-button>
-        <b-button class="btn-primary">
+        </nuxt-link>
+        <nuxt-link class="btn-primary ml-4" to="/login">
           Challenge finden
-        </b-button>
+        </nuxt-link>
       </div>
     </b-container>
   </div>
 </template>
 
 <script>
+import Hero from '../components/dashboard/Hero'
+import TextImageSection from '../components/dashboard/TextImageSection'
 
 export default {
   components: {
-
+    Hero,
+    TextImageSection
   }
 }
 </script>
@@ -139,27 +100,6 @@ export default {
 @import '../assets/style/variables';
 
   .index{
-    &--hero{
-      font-family: Helvetica;
-      background-image: linear-gradient(0deg, rgba(34, 45, 65, 0.85), rgba(34, 45, 65, 0.85)), url('/img/placeholder.jpg');
-      background-position:  center;
-      background-size: cover;
-      height: 60vh;
-      &-heading{
-        font-style: italic;
-        font-weight: bold;
-        color: white;
-        font-size: 60px;
-        line-height: 92px;
-      }
-      &-subheading{
-        color: white;
-        font-style: italic;
-        font-weight: bold;
-        font-size: 25px;
-        padding: 2rem 0;
-      }
-    }
     &--paragraph{
       font-size: 18px;
       line-height: 30px;
@@ -171,23 +111,18 @@ export default {
       margin: 20px 0;
     }
     &--button-end{
-      height: 20vh;
+      height: 40vh;
     }
+    &--last{
+      background-image: url('/img/background.png');
+      background-size: contain;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
 
-  @media only screen and (max-width: 420px){
-    .index{
-      &--hero{
-        height: 65vh;
-        &-heading{
-          font-size: 30px;
-          line-height: 30px;
-        }
-        &-subheading{
-          font-size: 20px;
-          line-height: 25px;
-        }
-      }
-    }
-  }
 </style>
