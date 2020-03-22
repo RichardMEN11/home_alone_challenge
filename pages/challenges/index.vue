@@ -2,13 +2,13 @@
   <div>
     <b-container class="dashboard--hero" fluid>
       <b-row class="h-100  align-items-center">
-        <b-col />
-        <b-col class="justify-content-center" cols="5">
+        <b-col cols="4" />
+        <b-col class="justify-content-center" cols="6">
           <h1 class="dashboard--heading text-center">
             Home Alone - Challenge yourself
           </h1>
         </b-col>
-        <b-col />
+        <b-col cols="2" />
       </b-row>
     </b-container>
     <b-container class="my-5 py-5">
