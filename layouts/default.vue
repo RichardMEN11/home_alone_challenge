@@ -38,11 +38,52 @@ html {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #37384F;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #37384F;
+}
+
+.nuxt-link-exact-active{
+  text-decoration: none;
+  color: $primary;
+}
+
 .btn-primary {
   color: white;
   background-color: $primary;
   border: none;
   padding: 1rem 2.5rem;
+  border-radius: 7px;
+}
+.btn-primary--outline {
+  color: $primary;
+  border: 1px solid $primary;
+  padding: .5rem 2.5rem;
+  border-radius: 7px;
+}
+.btn-primary--outline:hover {
+  color: $secondary;
+  text-decoration: none;
+  border: 1px solid $secondary;
+  padding: .5rem 2.5rem;
+  border-radius: 7px;
+}
+.btn-secondary--outline {
+  color: $secondary;
+  border: 1px solid $secondary;
+  padding: .5rem 2.5rem;
+  border-radius: 7px;
+}
+.btn-secondary--outline:hover {
+  color: $primary;
+  text-decoration: none;
+  border: 1px solid $primary;
+  padding: .5rem 2.5rem;
   border-radius: 7px;
 }
 
