@@ -1,57 +1,45 @@
 <template>
   <div class="d-flex flex-wrap">
     <avatar
-      v-for="user of visibleParticipants"
+      v-for="user of participants"
       :key="'participant-' + user.username"
       :src="user.avatar"
       :title="user.username"
     />
     <b-button
-      v-if="hasManyParticipants && !showAll"
+      v-if="hasMoreParticipants"
       variant="link"
       size="lg"
-      @click="toggleShowAll"
+      @click="loadMore"
     >
-      <font-awesome-icon icon="caret-down"/>
+      ...
     </b-button>
   </div>
 </template>
 
 <script>
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Avatar from '~/components/user/Avatar.vue'
 
 export default {
   components: {
-    Avatar,
-    FontAwesomeIcon
+    Avatar
   },
   props: {
-    participants: { type: Array, default: () => { return [] } }
-  },
-  data () {
-    return {
-      showAll: false
-    }
+    participants: { type: Array, default: () => { return [] } },
+    total: { type: Number, default: 0 }
   },
   computed: {
-    visibleParticipants () {
-      if (this.hasManyParticipants && !this.showAll) {
-        return this.participants.slice(0, 20)
-      }
-      return this.participants
-    },
-    hasManyParticipants () {
-      return this.participants.length > 20
+    hasMoreParticipants () {
+      return this.participants.length < this.total
     }
   },
   methods: {
     toggleLike () {
       // @TODO
     },
-    toggleShowAll () {
-      this.showAll = !this.showAll
+    loadMore () {
+      this.$emit('load-more')
     }
   }
 }

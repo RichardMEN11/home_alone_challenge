@@ -12,7 +12,10 @@
     </b-card-text>
     <div class="card-footer">
       <h2>Teilnehmer ({{ participants.length }})</h2>
-      <participants-list :participants="participants"/>
+      <participants-list
+        :participants="participants"
+        @load-more="loadMoreParticipants"
+      />
       <div class="call-to-action">
         <b-button variant="primary">
           Teilnehmen
@@ -33,17 +36,43 @@ export default {
   },
   props: {
     challenge: { type: Object, required: true },
-    participants: { type: Array, default: () => { return [] } },
     liked: { type: Boolean, default: false }
+  },
+  data () {
+    return {
+      participants: []
+    }
   },
   computed: {
     likeIcon () {
       return this.liked === true ? ['fas', 'heart'] : ['far', 'heart']
     }
   },
+  created () {
+    this.fetchParticipants(0, 10)
+  },
   methods: {
     toggleLike () {
       // @TODO
+    },
+    loadMoreParticipants () {
+      // @TODO use offset and limit
+      this.fetchParticipants()
+    },
+    async fetchParticipants (offset, limit) {
+      const data = { challenge_id: this.challenge_id }
+      if (Number.isInteger(offset)) {
+        data.offset = offset
+      }
+      if (Number.isInteger(limit)) {
+        data.limit = limit
+      }
+      try {
+        await this.$store.dispatch('load-more-participants', data)
+      } catch (e) {
+        // @TODO specify error message
+        this.errors = 'Ein Fehler ist aufgetreten.'
+      }
     }
   }
 
