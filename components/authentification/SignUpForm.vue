@@ -43,7 +43,6 @@
 
       <div class="d-flex justify-content-between">
         <b-button type="submit" variant="primary">Registrieren</b-button>
-        <b-button type="button" href="/" variant="secondary">Zurück</b-button>
       </div>
     </b-form>
   </div>
